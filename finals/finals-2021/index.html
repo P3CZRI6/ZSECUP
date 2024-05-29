@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>ZSE DRAGONS</title>
+        <link rel="icon" href="logo.png">
+        <link rel="stylesheet" href="style.css">
+        
+        <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"/>
+
+      <!-- ikonki -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous"
+  />
+    </head>
+
+    <body>
+      <video id="videoBG" poster="tlo.PNG" autoplay muted loop>
+        <source src="zse_dragons_anim.mp4" type="video/mp4">
+      </video>
+        <div id="main">
+        <div class="container pb-5">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                    <a href="../"><< Powrót</a>
+                    <img src="logo.png" class="pt-5 img-responsive img-fluid mx-auto d-block" alt="logo">
+
+                    <p class="h1 pt-2">7 marca 2021 odbyły się finały piątej edycji ZSECUP</p>
+                    <p class="h3">Zwycięzcy automatyczne zostali członkami szkolnej reprezentacji e-sportowej ZSE Dragons.</p>
+                    <p class="h1 pb-2" style="color: #ffc547;">Oto oni:</p>
+                    <div class="row">
+                    <div class="col-xl-4 col-sm-12 col-xs-12">
+                      
+                    <p class="h3 kolor">Counter-Strike: Global Offensive</p>
+                    <p class="h5" style="color:#309bf2;">Mieszanka Wybuchowa - XD</p>
+                    <p class="h6">Ersan "<strong>S4noskY</strong>" Kazmi</p>
+                    <p class="h6">Wiktor "<strong>mishor1</strong>" Horwacik</p>
+                    <p class="h6">Wojciech "<strong>GONC1AR</strong>" Gonciarczyk</p>
+                    <p class="h6">Patryk "<strong>KrzywyG</strong>" Krzyworzeka</p>
+                    <p class="h6">Antoni "<strong>cz4rny</strong>" Janiszewski</p>
+                    <p class="h6">Jan "<strong>Juster</strong>" Biel</p>
+                    <!-- <a class="text-warning" style="cursor: pointer;" data-toggle="modal" data-target="#modal_wynikcs">Wyniki</a> -->
+                    </div>
+        
+                      <div class="col-xl-4 col-sm-12 col-xs-12">
+                    <p class="h3 kolor">League of Legends</p>
+                    <p class="h5" style="color:#309bf2;">Emeritos Banditos – PUNT</p>
+                    <p class="h6">Mateusz "<strong>Krèto</strong>" Kręt</p>
+                    <p class="h6">Andrzej "<strong>00A693</strong>" Maziarz</p>
+                    <p class="h6">Filip "<strong>JanNautalis</strong>" Kędzior</p>
+                    <p class="h6">Dominik "<strong>MAŁY M</strong>" Gorassini-idziak</p>
+                    <p class="h6">Kacper "<strong>damage19</strong>" Nawrot</p>
+                    <!-- <a class="text-warning" style="cursor: pointer;" data-toggle="modal" data-target="#modal_wyniklol">Wyniki</a> -->
+                    </div>
+        
+                      <div class="col-xl-4 col-sm-12 col-xs-12">
+                      <p class="h3 kolor">Minecraft</p>
+                      <p class="h5" style="color:#309bf2;">Fasola Funclub - 420</p>
+                      <p class="h6">Patryk "<strong>P3CZRI6</strong>" Jędrzejczyk</p>
+                      <p class="h6">Patryk "<strong>Misiris</strong>" Grzesik</p>
+                      <p class="h6">Damian "<strong>Nilo_127</strong>" Kałuski</p>
+                      <p class="h6">Klaudiusz "<strong>kor3nt</strong>" Jędrzejczyk</p>
+                      <p class="h6">Filip "<strong>ThePuppy__</strong>" Pietrzyk</p>
+                        <!-- <a class="text-warning" style="cursor: pointer;" data-toggle="modal" data-target="#modal_wynikmc">Wyniki</a> -->
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer style="background: #242424; opacity: 75%;" class="page-footer font-small">
+            <div class="footer-copyright text-center py-3">
+                <span id="date"></span> © Wszelkie prawa zastrzeżone<br>
+                 <strong>ZSE DRAGONS</strong><br>
+                 <a
+                 href="https://www.facebook.com/esportwzse"
+                 target="_blank"
+                 class="h1 ikona"
+                 ><i class="fab fa-facebook-square"></i
+               ></a>
+               &nbsp;
+               <a
+                 href="https://www.youtube.com/channel/UCcO6aursoJWPU7yYEEoSGFQ"
+                 target="_blank"
+                 class="h1 ikona"
+                 ><i class="fab fa-youtube"></i
+               ></a>
+               <p>Autor strony: <strong><a href="https://www.facebook.com/DuolyStudio" target="_blank">Duoly</a></strong></p>
+            </div>
+          </footer>
+
+        <script>let date = new Date(); document.getElementById('date').innerHTML = date.getFullYear();</script> 
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+        <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    </body>
+</html>

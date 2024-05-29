@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZSE7CUP</title>
+    <link rel="icon" href="IMG/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar sticky">
+        <div class="content">
+            <div class="logo">
+                <a href="../">ZSE7CUP</a>
+                &nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/@esportwzse"><i class="fab fa-youtube"></i></a>
+                &nbsp;&nbsp;&nbsp;<a href="https://www.facebook.com/esportzsecup"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <ul class="menu-list">
+                <div class="icon cancel-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+                <li><a href="../">Strona Główna</a></li>
+                <li><a class="active" href="../rejestracja">Rejestracja</a></li>
+                <li><a href="../druzyny">Drużyny</a></li>
+                <li><a href="../zsebet">Typowanie</a></li>
+                <li><a href="../kontakt">Kontakt</a></li>
+                <li><a href="../wyniki.html">Wyniki</a></li>
+
+            </ul>
+            <div class="icon menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="banner">
+        <h1>Rejestracja</h1>
+    </div>
+    <div class="about">
+        <form class="flp" id="registerForm" name="register" onsubmit="event.preventDefault(); myValidation();">
+            <!--Dane druzyny-->
+            <div class="title color">Wybierz grę:</div>
+            <div class="cslol">
+                <input type="text" id="nazwa_druz" name="nazwa_druz">
+                <label for="nazwa_druz">Nazwa drużyny:</label>
+            </div>
+            <div class="cslol">
+                <input type="text" id="skrot_druz" maxlength="4" name="skrot_druz">
+                <label for="skrot_druz">Skrót drużyny:</label>
+            </div>
+
+            <div>
+                <select id="gra" name="gra" required>
+                    <option value="">--Wybierz gre--</option>
+                    <option value="csgo">Counter-Strike 2</option>
+                    <option value="lol">League of Legends</option>
+                    <option value="dirt">Dirt 2.0</option>
+
+                </select>
+
+
+            </div>
+            <label for="gra">Tytuł gry:</label>
+
+            <p class="red-text" id="team-name">Wprowadź poprawnie nazwę drużyny!</p>
+            <p class="red-text" id="team-tag">Wprowadź poprawnie TAG!</p>
+
+            <!--Kapitan-->
+            <div class="game" id="single">
+                <div class="title color">Dane Kapitana:</div>
+                <div>
+                    <input type="text" id="kname" name="kname" required>
+                    <label for="kname">Imie:</label>
+                </div>
+                <div>
+                    <input type="text" id="ksurname" name="ksurname" required>
+                    <label for="ksurname">Nazwisko:</label>
+                </div>
+                <div>
+                    <input type="text" id="kpseudo" name="kpseudo" required>
+                    <label for="kpseudo">Pseudonim:</label>
+                </div>
+                <div class="cs">
+                    <div>
+                        <input type="text" id="csteamid" name="csteamid">
+                        <label for="csteamid">SteamID:</label>
+                    </div>
+                </div>
+                <div>
+                    <input type="email" id="kemail" name="kemail" required>
+                    <label for="kemail">Email:</label>
+                </div>
+                <div>
+                    <input type="text" id="kclass" maxlength="3" name="kclass" required>
+                    <label for="kclass">Klasa:</label>
+                </div>
+            </div>
+
+
+
+            <p class="red-text" id="captain-name">Wprowadź poprawnie imie!</p>
+            <p class="red-text" id="captain-surname">Wprowadź poprawnie nazwisko!</p>
+            <p class="red-text" id="captain-nick">Wprowadź poprawnie pseudonim!</p>
+            <p class="red-text" id="captain-steamid">Wprowadź poprawnie SteamID!</p>
+            <p class="red-text" id="captain-email">Wprowadź poprawnie email! Musi być z domeny ZSE!</p>
+            <p class="red-text" id="captain-class">Wprowadź poprawnie klase!</p>
+
+            <!--Drugi gracz-->
+            <div class="dirt">
+                <div class="game">
+                    <div class="title color">Dane drugiego gracza:</div>
+                    <div>
+                        <input type="text" id="druginame" name="druginame">
+                        <label for="druginame">Imie:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="drugisurname" name="drugisurname">
+                        <label for="drugisurname">Nazwisko:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="drugipseudo" name="drugipseudo">
+                        <label for="drugipseudo">Pseudonim:</label>
+                    </div>
+                    <div class="cs">
+                        <div>
+                            <input type="text" id="ssteamid" name="ssteamid">
+                            <label for="ssteamid">SteamID:</label>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="email" id="drugiemail" name="drugiemail">
+                        <label for="drugiemail">Email:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="drugiclass" maxlength="3" name="drugiclass">
+                        <label for="drugiclass">Klasa:</label>
+                    </div>
+                </div>
+
+                <p class="red-text" id="second-name">Wprowadź poprawnie imie!</p>
+                <p class="red-text" id="second-surname">Wprowadź poprawnie nazwisko!</p>
+                <p class="red-text" id="second-nick">Wprowadź poprawnie pseudonim!</p>
+                <p class="red-text" id="second-steamid">Wprowadź poprawnie SteamID!</p>
+                <p class="red-text" id="second-email">Wprowadź poprawnie email! Musi być z domeny ZSE!</p>
+                <p class="red-text" id="second-class">Wprowadź poprawnie klase!</p>
+
+                <!--Trzeci gracz-->
+                <div class="game">
+                    <div class="title color">Dane trzeciego gracza:</div>
+                    <div>
+                        <input type="text" id="trzeciname" name="trzeciname">
+                        <label for="trzeciname">Imie:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="trzecisurname" name="trzecisurname">
+                        <label for="trzecisurname">Nazwisko:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="trzecipseudo" name="trzecipseudo">
+                        <label for="trzecipseudo">Pseudonim:</label>
+                    </div>
+                    <div class="cs">
+                        <div>
+                            <input type="text" id="tsteamid" name="tsteamid">
+                            <label for="tsteamid">SteamID:</label>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="email" id="trzeciemail" name="trzeciemail">
+                        <label for="trzeciemail">Email:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="trzeciclass" maxlength="3" name="trzeciclass">
+                        <label for="trzeciclass">Klasa:</label>
+                    </div>
+                </div>
+
+
+
+                <p class="red-text" id="third-name">Wprowadź poprawnie imie!</p>
+                <p class="red-text" id="third-surname">Wprowadź poprawnie nazwisko!</p>
+                <p class="red-text" id="third-nick">Wprowadź poprawnie pseudonim!</p>
+                <p class="red-text" id="third-steamid">Wprowadź poprawnie SteamID!</p>
+                <p class="red-text" id="third-email">Wprowadź poprawnie email! Musi być z domeny ZSE!</p>
+                <p class="red-text" id="third-class">Wprowadź poprawnie klase!</p>
+
+                <!--Czwarty Gracz-->
+                <div class="game">
+                    <div class="title color">Dane czwartego gracza:</div>
+                    <div>
+                        <input type="text" id="czwartyname" name="czwartyname">
+                        <label for="czwartyname">Imie:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="czwartysurname" name="czwartysurname">
+                        <label for="czwartysurname">Nazwisko:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="czwartypseudo" name="czwartypseudo">
+                        <label for="czwartypseudo">Pseudonim:</label>
+                    </div>
+                    <div class="cs">
+                        <div>
+                            <input type="text" id="foursteamid" name="foursteamid">
+                            <label for="foursteamid">SteamID:</label>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="email" id="czwartyemail" name="czwartyemail">
+                        <label for="czwartyemail">Email:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="czwartyclass" maxlength="3" name="czwartyclass">
+                        <label for="czwartyclass">Klasa:</label>
+                    </div>
+                </div>
+
+
+
+
+                <p class="red-text" id="fourth-name">Wprowadź poprawnie imie!</p>
+                <p class="red-text" id="fourth-surname">Wprowadź poprawnie nazwisko!</p>
+                <p class="red-text" id="fourth-nick">Wprowadź poprawnie pseudonim!</p>
+                <p class="red-text" id="fourth-steamid">Wprowadź poprawnie SteamID!</p>
+                <p class="red-text" id="fourth-email">Wprowadź poprawnie email! Musi być z domeny ZSE!</p>
+                <p class="red-text" id="fourth-class">Wprowadź poprawnie klase!</p>
+
+                <!--Piaty gracz-->
+                <div class="game">
+                    <div class="title color">Dane piątego gracza:</div>
+                    <div>
+                        <input type="text" id="piatyname" name="piatyname">
+                        <label for="piatyname">Imie:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="piatysurname" name="piatysurname">
+                        <label for="piatysurname">Nazwisko:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="piatypseudo" name="piatypseudo">
+                        <label for="piatypseudo">Pseudonim:</label>
+                    </div>
+                    <div class="cs">
+                        <div>
+                            <input type="text" id="fifthsteamid" name="fifthsteamid">
+                            <label for="fifthsteamid">SteamID:</label>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="email" id="piatyemail" name="piatyemail">
+                        <label for="piatyemail">Email:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="piatyclass" maxlength="3" name="piatyclass">
+                        <label for="piatyclass">Klasa:</label>
+                    </div>
+                </div>
+
+
+
+                <p class="red-text" id="fifth-name">Wprowadź poprawnie imie!</p>
+                <p class="red-text" id="fifth-surname">Wprowadź poprawnie nazwisko!</p>
+                <p class="red-text" id="fifth-nick">Wprowadź poprawnie pseudonim!</p>
+                <p class="red-text" id="fifth-steamid">Wprowadź poprawnie SteamID!</p>
+                <p class="red-text" id="fifth-email">Wprowadź poprawnie email! Musi być z domeny ZSE!</p>
+                <p class="red-text" id="fifth-class">Wprowadź poprawnie klase!</p>
+
+                <!--Rezerwowy gracz-->
+                <div class="game">
+                    <div class="title color">Dane gracza rezerwowego:</div>
+                    <div>
+                        <input type="text" id="rezerwaname" name="rezerwaname">
+                        <label for="rezerwaname">Imie:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="rezerwasurname" name="rezerwasurname">
+                        <label for="rezerwasurname">Nazwisko:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="rezerwapseudo" name="rezerwapseudo">
+                        <label for="rezerwapseudo">Pseudonim:</label>
+                    </div>
+                    <div class="cs">
+                        <div>
+                            <input type="text" id="rsteamid" name="rsteamid">
+                            <label for="rsteamid">SteamID:</label>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="email" id="rezerwaemail" name="rezerwaemail">
+                        <label for="rezerwaemail">Email:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="rezerwaclass" maxlength="3" name="rezerwaclass">
+                        <label for="rezerwaclass">Klasa:</label>
+                    </div>
+                </div>
+
+
+                <p class="red-text" id="reserve-name">Wprowadź poprawnie imie!</p>
+                <p class="red-text" id="reserve-surname">Wprowadź poprawnie nazwisko!</p>
+                <p class="red-text" id="reserve-nick">Wprowadź poprawnie pseudonim!</p>
+                <p class="red-text" id="reserve-steamid">Wprowadź poprawnie SteamID!</p>
+                <p class="red-text" id="reserve-email">Wprowadź poprawnie email! Musi być z domeny ZSE!</p>
+                <p class="red-text" id="reserve-class">Wprowadź poprawnie klase!</p>
+            </div>
+            <div id="btn_srodek">
+                <button id="submit" class="btn_wyslij">Wyślij</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>
+            Copyright &copy; 2024 <br>
+            <a id="ft_od" href="https://esportwzse.pl/">ZSE7CUP</a><br>
+            Created by: <a class="author" href="https://www.facebook.com/DuolyStudio" target="_blank">Duoly</a><br>
+            Logo designed by: <a class="author" href="https://www.instagram.com/kurdzieljakub/">@kurdzieljakub</a><br>
+        </p>
+    </footer>
+
+    <style>
+        .game,
+        .cs,
+        .cslol {
+            display: none;
+        }
+
+        #captain-name,
+        #captain-surname,
+        #captain-nick,
+        #captain-steamid,
+        #captain-email,
+        #captain-class {
+            display: none;
+        }
+
+        #second-name,
+        #second-surname,
+        #second-nick,
+        #second-steamid,
+        #second-email,
+        #second-class {
+            display: none;
+        }
+
+        #third-name,
+        #third-surname,
+        #third-nick,
+        #third-steamid,
+        #third-email,
+        #third-class {
+            display: none;
+        }
+
+        #fourth-name,
+        #fourth-surname,
+        #fourth-nick,
+        #fourth-steamid,
+        #fourth-email,
+        #fourth-class {
+            display: none;
+        }
+
+        #fifth-name,
+        #fifth-surname,
+        #fifth-nick,
+        #fifth-steamid,
+        #fifth-email,
+        #fifth-class {
+            display: none;
+        }
+
+        #reserve-name,
+        #reserve-surname,
+        #reserve-nick,
+        #reserve-steamid,
+        #reserve-email,
+        #reserve-class {
+            display: none;
+        }
+
+        #team-name,
+        #team-tag {
+            display: none;
+        }
+
+        #btn_srodek {
+            display: none;
+        }
+    </style>
+
+    <script>
+        //GRY
+
+        $(".cs").hide();
+
+
+        //ogolne
+        $("#team-name").hide();
+        $("#team-tag").hide();
+        $("#btn_srodek").hide();
+
+        //kapitan
+        $("#captain-name").hide();
+        $("#captain-surname").hide();
+        $("#captain-nick").hide();
+        $("#captain-steamid").hide();
+        $("#captain-email").hide();
+        $("#captain-class").hide();
+
+        //drugi gracz
+        $("#second-name").hide();
+        $("#second-surname").hide();
+        $("#second-nick").hide();
+        $("#second-steamid").hide();
+        $("#second-email").hide();
+        $("#second-class").hide();
+
+        //trzeci gracz
+        $("#third-name").hide();
+        $("#third-surname").hide();
+        $("#third-nick").hide();
+        $("#third-steamid").hide();
+        $("#third-email").hide();
+        $("#third-class").hide();
+
+        //czwarty gracz
+        $("#fourth-name").hide();
+        $("#fourth-surname").hide();
+        $("#fourth-nick").hide();
+        $("#fourth-steamid").hide();
+        $("#fourth-email").hide();
+        $("#fourth-class").hide();
+
+        //piaty gracz
+        $("#fifth-name").hide();
+        $("#fifth-surname").hide();
+        $("#fifth-nick").hide();
+        $("#fifth-steamid").hide();
+        $("#fifth-email").hide();
+        $("#fifth-class").hide();
+
+        //rezerwowy gracz
+        $("#reserve-name").hide();
+        $("#reserve-surname").hide();
+        $("#reserve-nick").hide();
+        $("#reserve-steamid").hide();
+        $("#reserve-email").hide();
+        $("#reserve-class").hide();
+
+
+
+        $('select').click(function () {
+            check_game();
+        });
+
+        function check_game() {
+            var game = document.getElementById("gra").value;
+            if (game == "csgo") {
+                $(".cs").show();
+                $(".game").show();
+                $(".cslol").show();
+                $(".dirt").show();
+                $("#btn_srodek").show();
+                document.getElementsByClassName('title color')[0].innerHTML = "Dane drużyny: ";
+                document.getElementsByClassName('title color')[1].innerHTML = "Dane Kapitana: ";
+
+
+
+            }
+            else if (game == "lol") {
+                $(".game").show();
+                $(".cs").hide();
+                $(".cslol").show();
+                $(".dirt").show();
+                $("#btn_srodek").show();
+                document.getElementsByClassName('title color')[0].innerHTML = "Dane drużyny: ";
+                document.getElementsByClassName('title color')[1].innerHTML = "Dane Kapitana: ";
+
+            }
+            else if (game == "dirt") {
+                location.href = "../rejestracja-dirt";
+
+
+
+            }
+            else {
+                $(".game").hide();
+                $(".cslol").hide();
+                $(".cs").hide();
+                $("#btn_srodek").hide();
+            }
+        }
+
+        //gra
+        $("#nazwa_druz").focusout(function () {
+            if (check_team_name($("#nazwa_druz").val())) {
+                $("#team-name").hide();
+            }
+            else {
+                $("#team-name").show();
+            }
+        });
+
+        $("#skrot_druz").focusout(function () {
+            if (check_team_tag($("#skrot_druz").val())) {
+                $("#team-tag").hide();
+            }
+            else {
+                $("#team-tag").show();
+            }
+        });
+
+        //walidacja kapitan
+        $("#kname").focusout(function () {
+            if (check_name($("#kname").val())) {
+                $("#captain-name").hide();
+            }
+            else {
+                $("#captain-name").show();
+            }
+        });
+
+        $("#ksurname").focusout(function () {
+            if (check_name($("#ksurname").val())) {
+                $("#captain-surname").hide();
+            }
+            else {
+                $("#captain-surname").show();
+            }
+        });
+
+        $("#kpseudo").focusout(function () {
+            if (check_nick($("#kpseudo").val())) {
+                $("#captain-nick").hide();
+            }
+            else {
+                $("#captain-nick").show();
+            }
+        });
+
+        $("#kemail").focusout(function () {
+            if (check_email($("#kemail").val())) {
+                $("#captain-email").hide();
+            }
+            else {
+                $("#captain-email").show();
+            }
+        });
+
+        $("#kclass").focusout(function () {
+            if (check_class($("#kclass").val())) {
+                $("#captain-class").hide();
+            }
+            else {
+                $("#captain-class").show();
+            }
+        });
+
+        //walidacja drugi gracz
+        $("#druginame").focusout(function () {
+            if (check_name($("#druginame").val())) {
+                $("#second-name").hide();
+            }
+            else {
+                $("#second-name").show();
+            }
+        });
+
+        $("#drugisurname").focusout(function () {
+            if (check_name($("#drugisurname").val())) {
+                $("#second-surname").hide();
+            }
+            else {
+                $("#second-surname").show();
+            }
+        });
+
+        $("#drugipseudo").focusout(function () {
+            if (check_nick($("#drugipseudo").val())) {
+                $("#second-nick").hide();
+            }
+            else {
+                $("#second-nick").show();
+            }
+        });
+
+        $("#drugiemail").focusout(function () {
+            if (check_email($("#drugiemail").val())) {
+                $("#second-email").hide();
+            }
+            else {
+                $("#second-email").show();
+            }
+        });
+
+        $("#drugiclass").focusout(function () {
+            if (check_class($("#drugiclass").val())) {
+                $("#second-class").hide();
+            }
+            else {
+                $("#second-class").show();
+            }
+        });
+
+        //walidacja trzeci gracz
+        $("#trzeciname").focusout(function () {
+            if (check_name($("#trzeciname").val())) {
+                $("#third-name").hide();
+            }
+            else {
+                $("#third-name").show();
+            }
+        });
+
+        $("#trzecisurname").focusout(function () {
+            if (check_name($("#trzecisurname").val())) {
+                $("#third-surname").hide();
+            }
+            else {
+                $("#third-surname").show();
+            }
+        });
+
+        $("#trzecipseudo").focusout(function () {
+            if (check_nick($("#trzecipseudo").val())) {
+                $("#third-nick").hide();
+            }
+            else {
+                $("#third-nick").show();
+            }
+        });
+
+        $("#trzeciemail").focusout(function () {
+            if (check_email($("#trzeciemail").val())) {
+                $("#third-email").hide();
+            }
+            else {
+                $("#third-email").show();
+            }
+        });
+
+        $("#trzeciclass").focusout(function () {
+            if (check_class($("#trzeciclass").val())) {
+                $("#third-class").hide();
+            }
+            else {
+                $("#third-class").show();
+            }
+        });
+
+        //walidacja czwarty gracz
+        $("#czwartyname").focusout(function () {
+            if (check_name($("#czwartyname").val())) {
+                $("#fourth-name").hide();
+            }
+            else {
+                $("#fourth-name").show();
+            }
+        });
+
+        $("#czwartysurname").focusout(function () {
+            if (check_name($("#czwartysurname").val())) {
+                $("#fourth-surname").hide();
+            }
+            else {
+                $("#fourth-surname").show();
+            }
+        });
+
+        $("#czwartypseudo").focusout(function () {
+            if (check_nick($("#czwartypseudo").val())) {
+                $("#fourth-nick").hide();
+            }
+            else {
+                $("#fourth-nick").show();
+            }
+        });
+
+        $("#czwartyemail").focusout(function () {
+            if (check_email($("#czwartyemail").val())) {
+                $("#fourth-email").hide();
+            }
+            else {
+                $("#fourth-email").show();
+            }
+        });
+
+        $("#czwartyclass").focusout(function () {
+            if (check_class($("#czwartyclass").val())) {
+                $("#fourth-class").hide();
+            }
+            else {
+                $("#fourth-class").show();
+            }
+        });
+
+        //walidacja piaty gracz
+        $("#piatyname").focusout(function () {
+            if (check_name($("#piatyname").val())) {
+                $("#fifth-name").hide();
+            }
+            else {
+                $("#fifth-name").show();
+            }
+        });
+
+        $("#piatysurname").focusout(function () {
+            if (check_name($("#piatysurname").val())) {
+                $("#fifth-surname").hide();
+            }
+            else {
+                $("#fifth-surname").show();
+            }
+        });
+
+        $("#piatypseudo").focusout(function () {
+            if (check_nick($("#piatypseudo").val())) {
+                $("#fifth-nick").hide();
+            }
+            else {
+                $("#fifth-nick").show();
+            }
+        });
+
+        $("#piatyemail").focusout(function () {
+            if (check_email($("#piatyemail").val())) {
+                $("#fifth-email").hide();
+            }
+            else {
+                $("#fifth-email").show();
+            }
+        });
+
+        $("#piatyclass").focusout(function () {
+            if (check_class($("#piatyclass").val())) {
+                $("#fifth-class").hide();
+            }
+            else {
+                $("#fifth-class").show();
+            }
+        });
+
+        //funkcje do sprawdzania
+        function check_name(name) {
+            var pattern = /^[a-zA-Z-ĄąĆćĘęŁłŃńÓóŚśŹźŻż]*$/;
+            if (pattern.test(name) && name !== '') {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function check_nick(nick) {
+            var pattern = /^[0-9a-zA-Z-ĄąĆćĘęŁłŃńÓóŚśŹźŻż_]*$/;
+            if (pattern.test(nick) && nick !== '') {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function check_steam(steamID) {
+            var pattern = /^[0-9a-zA-Z_:]*$/;
+            if (pattern.test(steamID) && steamID !== '') {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function check_email(email) {
+            var pattern = /^([a-z])+\.([a-z0-9])+\@(zse.krakow.pl)$/;
+            if (pattern.test(email) && email !== '') {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function check_class(classSchool) {
+            var pattern = /^[0-9a-zA-Z]*$/;
+            if (pattern.test(classSchool) && classSchool !== '') {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function check_team_name(teamName) {
+            var pattern = /^[0-9a-zA-Z]+[\w\s]*$/;
+            if (pattern.test(teamName) && teamName !== '') {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function check_team_tag(teamTag) {
+            var pattern = /^[0-9a-zA-Z]*$/;
+            if (pattern.test(teamTag) && teamTag !== '' && teamTag.length <= 4) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function myValidation() {
+            var name = check_team_name($("#nazwa_druz").val());
+            var tag = check_team_tag($("#skrot_druz").val());
+
+
+
+            var captain_name = check_name($("#kname").val());
+            var captain_surname = check_name($("#ksurname").val());
+            var captain_nick = check_nick($("kpseudo").val());
+            var captain_email = check_email($("#kemail").val());
+            var captain_class = check_class($("#kclass").val());
+            var captain_steam = check_steam($("#csteamid").val());
+
+            var second_name = check_name($("#druginame").val());
+            var second_surname = check_name($("#drugisurname").val());
+            var second_nick = check_nick($("drugipseudo").val());
+            var second_email = check_email($("#drugiemail").val());
+            var second_class = check_class($("#drugiclass").val());
+            var second_steam = check_steam($("#ssteamid").val());
+
+            var third_name = check_name($("#trzeciname").val());
+            var third_surname = check_name($("#trzecisurname").val());
+            var third_nick = check_nick($("#trzecipseudo").val());
+            var third_email = check_email($("#trzeciemail").val());
+            var third_class = check_class($("#trzeciclass").val());
+            var third_steam = check_steam($("#tsteamid").val());
+
+            var fourth_name = check_name($("#czwartyname").val());
+            var fourth_surname = check_name($("#czwartysurname").val());
+            var fourth_nick = check_nick($("#czwartypseudo").val());
+            var fourth_email = check_email($("#czwartyemail").val());
+            var fourth_class = check_class($("#czwartyclass").val());
+            var fourth_steam = check_steam($("#foursteamid").val());
+
+            var fifth_name = check_name($("#piatyname").val());
+            var fifth_surname = check_name($("#piatysurname").val());
+            var fifth_nick = check_nick($("#piatypseudo").val());
+            var fifth_email = check_email($("#piatyemail").val());
+            var fifth_class = check_class($("#piatyclass").val());
+            var fifth_steam = check_steam($("#fifthsteamid").val());
+
+            var game = document.getElementById("gra").value;
+
+            //sprawdzanie czy rezerwowy jest
+            var reserve = 3;
+            var reserve_name = check_name($("#rezerwaname").val());
+            var reserve_surname = check_name($("#rezerwasurname").val());
+            var reserve_nick = check_nick($("#rezerwapseudo").val());
+            var reserve_email = check_email($("#rezerwaemail").val());
+            var reserve_class = check_class($("#rezerwaclass").val());
+            var reserve_steam = check_steam($("#rsteamid").val());
+
+            if ($("#rezerwaname").val() == '' && $("#rezerwasurname").val() == '' && $("#rezerwapseudo").val() == ''
+                && $("#rezerwaemail").val() == '' && $("#rezerwaclass").val() == '') {
+                reserve = 0;
+            }
+            else if (reserve_name && reserve_surname && reserve_nick && reserve_email && reserve_class) {
+                reserve = 2;
+            }
+            else {
+                reserve = 1;
+            }
+
+
+            var piaty = 3;
+            if ($("#piatyname").val() == '' && $("#piatysurname").val() == '' && $("#piatypseudo").val() == ''
+                && $("#piatyemail").val() == '' && $("#piatyclass").val() == '') {
+                piaty = 0;
+            }
+            else if (fifth_name && fifth_surname && fifth_nick && fifth_email && fifth_class) {
+                piaty = 2;
+            }
+            else {
+                piaty = 1;
+            }
+
+
+            var czwarty = 3;
+            if ($("#czwartyname").val() == '' && $("#czwartysurname").val() == '' && $("#czwartypseudo").val() == ''
+                && $("#czwartyemail").val() == '' && $("#czwartyclass").val() == '') {
+                czwarty = 0;
+            }
+            else if (fourth_name && fourth_surname && fourth_nick && fourth_email && fourth_class) {
+                czwarty = 2;
+            }
+            else {
+                czwarty = 1;
+            }
+
+            var trzeci = 3;
+            if ($("#trzeciname").val() == '' && $("#trzecisurname").val() == '' && $("#trzecipseudo").val() == ''
+                && $("#trzeciemail").val() == '' && $("#trzeciclass").val() == '') {
+                trzeci = 0;
+            }
+            else if (third_name && third_surname && third_nick && third_email && third_class) {
+                trzeci = 2;
+            }
+            else {
+                trzeci = 1;
+            }
+
+            var drugi = 3;
+            if ($("#druginame").val() == '' && $("#drugisurname").val() == '' && $("#drugipseudo").val() == ''
+                && $("#drugiemail").val() == '' && $("#drugiclass").val() == '') {
+                drugi = 0;
+            }
+            else if (second_name && second_surname && second_nick && second_email && second_class) {
+                drugi = 2;
+            }
+            else {
+                drugi = 1;
+            }
+
+            if (reserve == 1) {
+                if (check_name($("#rezerwaname").val())) {
+                    $("#reserve-name").hide();
+                }
+                else {
+                    $("#reserve-name").show();
+                }
+                if (check_name($("#rezerwasurname").val())) {
+                    $("#reserve-surname").hide();
+                }
+                else {
+                    $("#reserve-surname").show();
+                }
+
+                if (check_nick($("#rezerwapseudo").val())) {
+                    $("#reserve-nick").hide();
+                }
+                else {
+                    $("#reserve-nick").show();
+                }
+
+                if (check_email($("#rezerwaemail").val())) {
+                    $("#reserve-email").hide();
+                }
+                else {
+                    $("#reserve-email").show();
+                }
+
+                if (check_class($("#rezerwaclass").val())) {
+                    $("#reserve-class").hide();
+                }
+                else {
+                    $("#reserve-class").show();
+                }
+            }
+
+            //sprawdzanie czy steamid potrzebne
+            if (game == "csgo") {
+                if (captain_steam) {
+                    $("#captain-steamid").hide();
+                }
+                else {
+                    $("#captain-steamid").show();
+                }
+
+                if (second_steam) {
+                    $("#second-steamid").hide();
+                }
+                else {
+                    $("#second-steamid").show();
+                }
+
+                if (third_steam) {
+                    $("#third-steamid").hide();
+                }
+                else {
+                    $("#third-steamid").show();
+                }
+
+                if (fourth_steam) {
+                    $("#fourth-steamid").hide();
+                }
+                else {
+                    $("#fourth-steamid").show();
+                }
+
+                if (fifth_steam) {
+                    $("#fifth-steamid").hide();
+                }
+                else {
+                    $("#fifth-steamid").show();
+                }
+
+                if (reserve == 1) {
+                    if (check_steam($("#rsteamid").val())) {
+                        $("#reserve-steamid").hide();
+                    }
+                    else {
+                        $("#reserve-steamid").show();
+                    }
+                }
+            }
+
+            var type_game = $("#gra").val();
+
+            var name_team = $("#nazwa_druz").val();
+            var tag_team = $("#skrot_druz").val();
+
+
+            var captain_name1 = $("#kname").val();
+            var captain_surname1 = $("#ksurname").val();
+            var captain_nick1 = $("#kpseudo").val();
+            var captain_email1 = $("#kemail").val();
+            var captain_class1 = $("#kclass").val();
+            var captain_steam1 = $("#csteamid").val();
+
+            var second_name1 = $("#druginame").val();
+            var second_surname1 = $("#drugisurname").val();
+            var second_nick1 = $("#drugipseudo").val();
+            var second_email1 = $("#drugiemail").val();
+            var second_class1 = $("#drugiclass").val();
+            var second_steam1 = $("#ssteamid").val();
+
+            var third_name1 = $("#trzeciname").val();
+            var third_surname1 = $("#trzecisurname").val();
+            var third_nick1 = $("#trzecipseudo").val();
+            var third_email1 = $("#trzeciemail").val();
+            var third_class1 = $("#trzeciclass").val();
+            var third_steam1 = $("#tsteamid").val();
+
+            var fourth_name1 = $("#czwartyname").val();
+            var fourth_surname1 = $("#czwartysurname").val();
+            var fourth_nick1 = $("#czwartypseudo").val();
+            var fourth_email1 = $("#czwartyemail").val();
+            var fourth_class1 = $("#czwartyclass").val();
+            var fourth_steam1 = $("#foursteamid").val();
+
+            var fifth_name1 = $("#piatyname").val();
+            var fifth_surname1 = $("#piatysurname").val();
+            var fifth_nick1 = $("#piatypseudo").val();
+            var fifth_email1 = $("#piatyemail").val();
+            var fifth_class1 = $("#piatyclass").val();
+            var fifth_steam1 = $("#fifthsteamid").val();
+
+            var reserve_name1 = $("#rezerwaname").val();
+            var reserve_surname1 = $("#rezerwasurname").val();
+            var reserve_nick1 = $("#rezerwapseudo").val();
+            var reserve_email1 = $("#rezerwaemail").val();
+            var reserve_class1 = $("#rezerwaclass").val();
+            var reserve_steam1 = $("#rsteamid").val();
+
+            //sprawdzanie czy mozna wyslac dane
+            if (tag && name) {
+                if (captain_name && captain_surname && captain_nick && captain_email && captain_class) {
+
+
+
+                    if (piaty == 2 || piaty == 0 && czwarty == 2 || czwarty == 0 && trzeci == 0 || trzeci == 2 && drugi == 0 || drugi == 2) {
+                        if (fifth_name && fifth_surname && fifth_nick && fifth_email && fifth_class ||
+                            fifth_name1 == '' && fifth_surname1 == '' && fifth_nick1 == '' && fifth_email1 == '' && fifth_class1 == ''
+                            && fourth_name && fourth_surname && fourth_nick && fourth_email && fourth_class ||
+                            fourth_name1 == '' && fourth_surname1 == '' && fourth_nick1 == '' && fourth_email1 == '' && fourth_class1 == ''
+                            && third_name && third_surname && third_nick && third_email && third_class ||
+                            third_name1 == '' && third_surname1 == '' && third_nick1 == '' && third_email1 == '' && third_class1 == ''
+                            && second_name && second_surname && second_nick && second_email && second_class ||
+                            second_name1 == '' && second_surname1 == '' && second_nick1 == '' && second_email1 == '' && second_class1 == '') {
+                            if (reserve == 2) {
+                                if (reserve_name && reserve_surname && reserve_nick && reserve_email && reserve_class) {
+                                    if (game == "csgo") {
+                                        if (captain_steam && second_steam && third_steam && fourth_steam && fifth_steam && reserve_steam) {
+                                            $.ajax({
+                                                url: 'send.php',
+                                                type: 'post',
+                                                data: {
+                                                    game: type_game,
+                                                    teamName: name_team,
+                                                    teamTag: tag_team,
+
+                                                    captain_name: captain_name1,
+                                                    captain_surname: captain_surname1,
+                                                    captain_email: captain_email1,
+                                                    captain_nick: captain_nick1,
+                                                    captain_class: captain_class1,
+                                                    captain_steam: captain_steam1,
+
+                                                    second_name: second_name1,
+                                                    second_surname: second_surname1,
+                                                    second_email: second_email1,
+                                                    second_nick: second_nick1,
+                                                    second_class: second_class1,
+                                                    second_steam: second_steam1,
+
+                                                    third_name: third_name1,
+                                                    third_surname: third_surname1,
+                                                    third_email: third_email1,
+                                                    third_nick: third_nick1,
+                                                    third_class: third_class1,
+                                                    third_steam: third_steam1,
+
+                                                    fourth_name: fourth_name1,
+                                                    fourth_surname: fourth_surname1,
+                                                    fourth_email: fourth_email1,
+                                                    fourth_nick: fourth_nick1,
+                                                    fourth_class: fourth_class1,
+                                                    fourth_steam: fourth_steam1,
+
+                                                    fifth_name: fifth_name1,
+                                                    fifth_surname: fifth_surname1,
+                                                    fifth_email: fifth_email1,
+                                                    fifth_nick: fifth_nick1,
+                                                    fifth_class: fifth_class1,
+                                                    fifth_steam: fifth_steam1,
+
+                                                    reserve_name: reserve_name1,
+                                                    reserve_surname: reserve_surname1,
+                                                    reserve_email: reserve_email1,
+                                                    reserve_nick: reserve_nick1,
+                                                    reserve_class: reserve_class1,
+                                                    reserve_steam: reserve_steam1,
+
+                                                },
+                                                success: function (response) {
+                                                    if (response == "not") {
+                                                        alert("Taka drużyna już istnieje!");
+                                                    }
+                                                    else {
+                                                        alert("Dziękujemy za rejestrację! Jeśli zaproszenie nie dotrze skontaktuj się z nami przez facebook'a!");
+                                                    }
+                                                }
+                                            });
+                                            return true;
+                                        }
+                                        else {
+                                            return false;
+                                        }
+                                    }
+                                    else {
+                                        $.ajax({
+                                            url: 'send.php',
+                                            type: 'post',
+                                            data: {
+                                                game: type_game,
+                                                teamName: name_team,
+                                                teamTag: tag_team,
+
+                                                captain_name: captain_name1,
+                                                captain_surname: captain_surname1,
+                                                captain_email: captain_email1,
+                                                captain_nick: captain_nick1,
+                                                captain_class: captain_class1,
+
+                                                second_name: second_name1,
+                                                second_surname: second_surname1,
+                                                second_email: second_email1,
+                                                second_nick: second_nick1,
+                                                second_class: second_class1,
+
+                                                third_name: third_name1,
+                                                third_surname: third_surname1,
+                                                third_email: third_email1,
+                                                third_nick: third_nick1,
+                                                third_class: third_class1,
+
+                                                fourth_name: fourth_name1,
+                                                fourth_surname: fourth_surname1,
+                                                fourth_email: fourth_email1,
+                                                fourth_nick: fourth_nick1,
+                                                fourth_class: fourth_class1,
+
+                                                fifth_name: fifth_name1,
+                                                fifth_surname: fifth_surname1,
+                                                fifth_email: fifth_email1,
+                                                fifth_nick: fifth_nick1,
+                                                fifth_class: fifth_class1,
+
+                                                reserve_name: reserve_name1,
+                                                reserve_surname: reserve_surname1,
+                                                reserve_email: reserve_email1,
+                                                reserve_nick: reserve_nick1,
+                                                reserve_class: reserve_class1,
+
+                                            },
+                                            success: function (response) {
+                                                if (response == "not") {
+                                                    alert("Taka drużyna już istnieje!");
+                                                }
+                                                else {
+                                                    alert("Dziękujemy za rejestrację! Jeśli zaproszenie nie dotrze skontaktuj się z nami przez facebook'a!");
+                                                }
+                                            }
+                                        });
+                                        return true;
+                                    }
+                                }
+                                else {
+                                    return false;
+                                }
+                            }
+                            else if (reserve == 0) {
+                                if (game == "csgo") {
+                                    if (captain_steam && second_steam && third_steam && fourth_steam && fifth_steam) {
+                                        $.ajax({
+                                            url: 'unsend.php',
+                                            type: 'post',
+                                            data: {
+                                                game: type_game,
+                                                teamName: name_team,
+                                                teamTag: tag_team,
+
+                                                captain_name: captain_name1,
+                                                captain_surname: captain_surname1,
+                                                captain_email: captain_email1,
+                                                captain_nick: captain_nick1,
+                                                captain_class: captain_class1,
+                                                captain_steam: captain_steam1,
+
+                                                second_name: second_name1,
+                                                second_surname: second_surname1,
+                                                second_email: second_email1,
+                                                second_nick: second_nick1,
+                                                second_class: second_class1,
+                                                second_steam: second_steam1,
+
+                                                third_name: third_name1,
+                                                third_surname: third_surname1,
+                                                third_email: third_email1,
+                                                third_nick: third_nick1,
+                                                third_class: third_class1,
+                                                third_steam: third_steam1,
+
+                                                fourth_name: fourth_name1,
+                                                fourth_surname: fourth_surname1,
+                                                fourth_email: fourth_email1,
+                                                fourth_nick: fourth_nick1,
+                                                fourth_class: fourth_class1,
+                                                fourth_steam: fourth_steam1,
+
+                                                fifth_name: fifth_name1,
+                                                fifth_surname: fifth_surname1,
+                                                fifth_email: fifth_email1,
+                                                fifth_nick: fifth_nick1,
+                                                fifth_class: fifth_class1,
+                                                fifth_steam: fifth_steam1,
+
+                                            },
+                                            success: function (response) {
+                                                if (response == "not") {
+                                                    alert("Taka drużyna już istnieje!");
+                                                }
+                                                else {
+                                                    alert("Dziękujemy za rejestrację! Jeśli zaproszenie nie dotrze skontaktuj się z nami przez facebook'a!");
+                                                }
+                                            }
+                                        });
+                                    }
+                                }
+                                else {
+                                    $.ajax({
+                                        url: 'unsend.php',
+                                        type: 'post',
+                                        data: {
+                                            game: type_game,
+                                            teamName: name_team,
+                                            teamTag: tag_team,
+
+                                            captain_name: captain_name1,
+                                            captain_surname: captain_surname1,
+                                            captain_email: captain_email1,
+                                            captain_nick: captain_nick1,
+                                            captain_class: captain_class1,
+
+                                            second_name: second_name1,
+                                            second_surname: second_surname1,
+                                            second_email: second_email1,
+                                            second_nick: second_nick1,
+                                            second_class: second_class1,
+
+                                            third_name: third_name1,
+                                            third_surname: third_surname1,
+                                            third_email: third_email1,
+                                            third_nick: third_nick1,
+                                            third_class: third_class1,
+
+                                            fourth_name: fourth_name1,
+                                            fourth_surname: fourth_surname1,
+                                            fourth_email: fourth_email1,
+                                            fourth_nick: fourth_nick1,
+                                            fourth_class: fourth_class1,
+
+                                            fifth_name: fifth_name1,
+                                            fifth_surname: fifth_surname1,
+                                            fifth_email: fifth_email1,
+                                            fifth_nick: fifth_nick1,
+                                            fifth_class: fifth_class1,
+
+                                        },
+                                        success: function (response) {
+                                            if (response == "not") {
+                                                alert("Taka drużyna już istnieje!");
+                                            }
+                                            else {
+                                                alert("Dziękujemy za rejestrację! Jeśli zaproszenie nie dotrze skontaktuj się z nami przez facebook'a!");
+                                            }
+
+                                        }
+                                    });
+                                }
+                                return true;
+                            }
+                            else {
+                                alert("Coś poszło nie tak! Spróbuj ponownie!");
+                                return false;
+                            }
+                        }
+                        else {
+                            return false;
+                        }
+                    }
+                    else {
+                        return false;
+                    }
+
+
+
+
+
+
+                }
+                else {
+                    return false;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+
+    </script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

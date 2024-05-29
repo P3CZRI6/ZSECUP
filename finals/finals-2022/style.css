@@ -1,0 +1,119 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-attachment: fixed;
+  background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+  color: white !important;
+}
+
+#main{
+  background: rgba(0,0,0,0.80); 
+}
+
+.kolor{
+  color: #ff6b6b;
+}
+
+.modal-footer button {
+  font-size: 17px;
+  background: none;
+  max-width: 383px;
+  text-align: center;
+  position: relative;
+  padding: 10px 20px;
+  display: inline-block;
+  color: white;
+  border: 2px solid white;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 10px;
+}
+
+.guzik:hover, .guzik:hover{
+  background: #ffc107;
+  color: #fff;
+  border-radius: 5px;
+  border: 2px solid #ffc107;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #474747; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffc107; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9e7808; 
+}
+
+.ikona{
+color:white;
+}
+
+.ikona:hover{
+color:#ffc107;
+}
+
+
+#videoBG {
+  position:fixed;
+  z-index: -1;
+  width:100%;     
+  height: auto;
+-webkit-filter: blur(3px);
+-moz-filter: blur(3px);
+-o-filter: blur(3px);
+-ms-filter: blur(3px);
+filter: blur(3px);
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #videoBG { 
+      width:auto;
+      height: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  #videoBG {
+      display: none;
+  }
+  body {
+      background: url('tlo.PNG');
+    background-size: 100%;
+  background-attachment: fixed;
+  background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+backdrop-filter: blur(4px);
+  }
+
+
+#main{
+  background: rgba(0,0,0,0.80); 
+}
+}
